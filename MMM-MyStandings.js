@@ -14,6 +14,7 @@ Module.register("MMM-MyStandings",{
 			{ league: "NFL", groups: ["AFC East", "AFC North", "AFC South", "AFC West", "NFC East", "NFC North", "NFC South", "NFC West"] },
 			{ league: "NHL", groups: ["Atlantic Division", "Metropolitan Division", "Central Division", "Pacific Division"] },
 			{ league: "MLS", groups: ["Eastern Conference", "Western Conference"] },
+			{ league: "Prem", groups: ["English Premier League 2019-2020"]},
 			{ league: "NCAAF", groups: ["American Athletic - East", "American Athletic - West", "Atlantic Coast Conference - Atlantic", "Atlantic Coast Conference - Coastal",
 										"Big 12 Conference", "Big Ten - East", "Big Ten - West", "Conference USA - East", "Conference USA - West",
 										"FBS Independents", "Mid-American - East", "Mid-American - West", "Mountain West - Mountain", "Mountain West - West",
@@ -41,7 +42,7 @@ Module.register("MMM-MyStandings",{
 	start: function () {
 		// Set some default for groups if not found in user config
 		for (var league in this.config.sports) {
-			if (this.config.sports[league].groups === undefined) {
+			if (this.config.sports[league] && this.config.sports[league].groups === undefined) {
 				for (var leagueDefault in this.defaults.sports) {
 					if (this.defaults.sports[leagueDefault].league === this.config.sports[league].league) {
 						this.config.sports[league].groups = this.defaults.sports[leagueDefault].groups;
@@ -128,6 +129,9 @@ Module.register("MMM-MyStandings",{
 					break;
 				case "MLS":
 					sport = "soccer/usa.1/standings?sort=rank:asc";
+					break;
+				case "Prem":
+					sport = "soccer/eng.1/standings?sort=rank:asc";
 					break;
 				case "NCAAF":
 					sport = "football/college-football/standings?group=80&level=3&sort=leaguewinpercent:desc,vsconf_wins:desc,vsconf_gamesbehind:asc,vsconf_playoffseed:asc,wins:desc,losses:desc,playoffseed:asc,alpha:asc";
@@ -216,7 +220,7 @@ Module.register("MMM-MyStandings",{
 		var formattedStandingsObject = [];
 		var imageType = ".svg";
 
-		if (sport === 'NCAAF') {
+		if (sport === 'NCAAF' || sport === 'Prem') {
 			imageType = ".png";
 		}
 
@@ -391,6 +395,43 @@ Module.register("MMM-MyStandings",{
 						}
 					}
 					else if (sport === 'MLS')
+					{
+						switch (entry.name) {
+							case "wins":
+								newEntry.name = entry.name;
+								newEntry.value = entry.value;
+								newStats.push({
+									key: 1,
+									value: newEntry
+								});
+								break;
+							case "ties":
+								newEntry.name = entry.name;
+								newEntry.value = entry.value;
+								newStats.push({
+									key: 2,
+									value: newEntry
+								});
+								break;
+							case "losses":
+								newEntry.name = entry.name;
+								newEntry.value = entry.value;
+								newStats.push({
+									key: 3,
+									value: newEntry
+								});
+								break;
+							case "points":
+								newEntry.name = entry.name;
+								newEntry.value = entry.value;
+								newStats.push({
+									key: 4,
+									value: newEntry
+								});
+								break;
+						}
+					}
+					else if (sport === 'Prem')
 					{
 						switch (entry.name) {
 							case "wins":

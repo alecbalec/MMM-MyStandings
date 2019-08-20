@@ -4,7 +4,7 @@
 			{% if division != null %}
 			{% if config.showByDivision === false or (config.showByDivision and currentDivision === division.name) %}
 				<tr class="league-separator">
-					<td colspan="2"><span>{% if division.shortName !== undefined %}{{division.shortName}}{% else %}{{division.name}}{% endif %}</span></td>
+					<td colspan="2"><span>{% if division.shortName !== undefined %}{{division.shortName}}{% elseif currentSport === "Prem" %}Premier League{% else %}{{division.name}}{% endif %}</span></td>
 				{% if currentSport === "NHL" %}
 					<td>W</td><td>L</td><td>OTL</td><td>PTS</td>
 				{% elseif currentSport === "MLB" %}
@@ -15,6 +15,8 @@
 					<td>W</td><td>L</td><td>T</td>
 				{% elseif currentSport === "MLS" %}
 					<td>W</td><td>T</td><td>L</td><td>PTS</td>
+				{% elseif currentSport === "Prem" %}
+					<td>W</td><td>D</td><td>L</td><td>PTS</td>					
 				{% elseif currentSport === "NCAAF" %}
 					<td>Conf</td><td>Overall</td>
 				{% endif %}
