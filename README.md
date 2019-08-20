@@ -1,10 +1,10 @@
 # Creds to vincep5 for this amazing module!
+This fork includes the English Premier League, more leagues might be added.
 
 # MMM-MyStandings
 MagicMirror module to get ESPN standings for the major US sports including the English Premier League
 # MMM-MyStandings
-MagicMirror module to get ESPN standings for the major US sports including the English Premier League.  This is a fork of MMM-MyStanding and figured that the English Premier League will compliment it nicely.
-The module will rotate through different sports.  If you only want to show one sport or one division, the module will just display one without rotating.
+MagicMirror module to get ESPN standings for the major US sports (incl English Premier League). I was inspired by MMM-MyScoreboard and figured that this will compliment it nicely. The module will rotate through different sports. If you only want to show one sport or one division, the module will just display one without rotating.
 
 ## API
 Uses the ESPN API for sports standings
