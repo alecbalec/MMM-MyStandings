@@ -1,7 +1,7 @@
 # MMM-MyStandings
-MagicMirror module to get ESPN standings for the major US sports
+MagicMirror module to get ESPN standings for the major US sports including the English Premier League
 # MMM-MyStandings
-MagicMirror module to get ESPN standings for the major US sports.  I was inspired by MMM-MyScoreboard and figured that this will compliment it nicely.
+MagicMirror module to get ESPN standings for the major US sports including the English Premier League.  This is a my fork of MMM-MyStanding  and figured that the English Premier League will compliment it nicely.
 The module will rotate through different sports.  If you only want to show one sport or one division, the module will just display one without rotating.
 
 ## API
@@ -14,6 +14,8 @@ Uses the ESPN API for sports standings
 Go to your MagicMirror modules directory by entering `cd MagicMirror/modules`
 
 run `git clone https://github.com/vincep5/MMM-MyStandings`
+
+if clone from `https://github.com/vincep5/MMM-MyStandings` copy the MMM-MyStandings.js and standings.njk into the module folder.
 
 ## Config
 Add `MMM-MyStandings` module to the `modules` array in the `config/config.js` file:
@@ -31,6 +33,7 @@ modules: [
 				{ league: "NFL", groups: ["AFC East", "AFC North", "AFC South", "AFC West", "NFC East", "NFC North", "NFC South", "NFC West"] },
 				{ league: "NHL", groups: ["Atlantic Division", "Metropolitan Division", "Central Division", "Pacific Division"] },
 				{ league: "MLS", groups: ["Eastern Conference", "Western Conference"] },
+				{ league: "Prem", groups: ["English Premier League 2019-2020"]},
 				{ league: "NCAAF", groups: ["American Athletic - East", "American Athletic - West", "Atlantic Coast Conference - Atlantic", "Atlantic Coast Conference - Coastal",
 										"Big 12 Conference", "Big Ten - East", "Big Ten - West", "Conference USA - East", "Conference USA - West",
 										"FBS Independents", "Mid-American - East", "Mid-American - West", "Mountain West - Mountain", "Mountain West - West",
