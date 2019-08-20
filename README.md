@@ -8,6 +8,7 @@ The module will rotate through different sports.  If you only want to show one s
 Uses the ESPN API for sports standings
 
 ## Preview
+![screenshot1](screenshot2.JPG)
 ![screenshot1](screenshot1.JPG)
 
 ## Installing the module
