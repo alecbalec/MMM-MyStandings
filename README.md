@@ -16,7 +16,7 @@ Go to your MagicMirror modules directory by entering `cd MagicMirror/modules`
 
 run `git clone https://github.com/vincep5/MMM-MyStandings`
 
-if clone from `https://github.com/vincep5/MMM-MyStandings` copy the MMM-MyStandings.js and standings.njk into the module folder.
+if you clone from `https://github.com/vincep5/MMM-MyStandings` copy the MMM-MyStandings.js and standings.njk into the module folder.
 
 ## Config
 Add `MMM-MyStandings` module to the `modules` array in the `config/config.js` file:
